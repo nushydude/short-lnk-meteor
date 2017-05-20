@@ -23,7 +23,14 @@ export default class AddLink extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    Meteor.call('links.insert', this.state.url, (err, res) => {
+    let url = this.state.url;
+
+    // prepend http:// to the url automatically
+    if (!url.match(/^http:\/\//)) {
+      url = `http://${url}`;
+    }
+
+    Meteor.call('links.insert', url, (err, res) => {
       if (!err) {
         this.handleModalClose();
       } else {
