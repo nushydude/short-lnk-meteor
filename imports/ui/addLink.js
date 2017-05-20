@@ -26,7 +26,7 @@ export default class AddLink extends Component {
     let url = this.state.url;
 
     // prepend http:// to the url automatically
-    if (!url.match(/^http:\/\//)) {
+    if (!url.match(/^https?:\/\//)) {
       url = `http://${url}`;
     }
 
