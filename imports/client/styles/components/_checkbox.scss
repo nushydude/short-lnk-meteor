@@ -1,0 +1,9 @@
+.checkbox {
+  display: flex;
+  margin-bottom: $space;
+  align-items: center;
+}
+
+.checkbox__box {
+  margin-right: $space / 2;
+}
